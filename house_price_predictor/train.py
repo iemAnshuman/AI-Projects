@@ -84,7 +84,7 @@ def main(args):
     # save the best
     model_dir = Path(args.model_dir)
     model_dir.mkdir(parents=True, exist_ok=True)
-    out_path = models_dir / "house_price_pipeline.pkl"
+    out_path = model_dir / "house_price_pipeline.pkl"
     dump(grid.best_estimator_, out_path)
     print(f"Saved trained pipeline to: {out_path}")
 
