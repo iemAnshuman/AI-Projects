@@ -70,7 +70,7 @@ def main(args):
         "model_max_depth": [None, 12, 24],
         "model_min_samples_leaf": [1,3,5]
     }
-    grid = GridSearchCv(
+    grid = GridSearchCV(
         pipe, param_grid=param_grid, cv=5, 
         scoring="neg_root_mean_squared_error", n_jobs=-1, verbose=1
     )
