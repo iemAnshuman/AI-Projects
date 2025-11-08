@@ -101,5 +101,6 @@ if __name__ == "__main__":
     parser.add_argument("--data", type=str, required=True, help="path to dataset")
     parser.add_argument("--model_dir", type=str, required=True, help="where to save model artifact")
     parser.add_argument("--result", type=str, required=True, help="where to save result.md")
+    args = parser.parse_args()
     main(args)
 
