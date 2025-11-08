@@ -30,7 +30,8 @@ def preprocessor(num_cols, cat_cols):
     return preprocess  
 
 def main(args):
-    path = Path(args.data)
+    script_dir = Path(__file__).parent
+    path = script_dir / args.data
     if not path.exists():
         raise FileNotFoundError(f"Data not found at {path}")
     
