@@ -96,7 +96,7 @@ def main(args):
     )
     print(f"Wrote result table to: {result_md}")
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--data", type=str, required=True, help="path to dataset")
     parser.add_argument("--model_dir", type=str, required=True, help="where to save model artifact")
