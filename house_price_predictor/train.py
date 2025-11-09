@@ -56,9 +56,12 @@ def main(args):
         baseline, X, y, cv=5, scoring="neg_root_mean_squared_error", n_jobs=-1
     ).mean()
 
-    # print("RMSE for baseline model: " + rmse_baseline)
+    print(f"RMSE for baseline model: {rmse_baseline:.3f}")
 
-    # Tuned Model
+    # Lasso and Ridge Regressor
+
+
+    # Random Forest Regressor
 
     pipe = Pipeline([
         ("preprocess", preprocess),
@@ -66,9 +69,9 @@ def main(args):
     ])
      
     param_grid = {
-        "model_n_estimators": [300,600],
-        "model_max_depth": [None, 12, 24],
-        "model_min_samples_leaf": [1,3,5]
+        "model__n_estimators": [300,600],
+        "model__max_depth": [None, 12, 24],
+        "model__min_samples_leaf": [1,3,5]
     }
     grid = GridSearchCV(
         pipe, param_grid=param_grid, cv=5, 
